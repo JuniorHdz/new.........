@@ -1,0 +1,491 @@
+/* ================================
+   GENERAL
+================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    padding: 50px 20px;
+
+    font-family: "Segoe UI", Arial, sans-serif;
+
+    color: #3d2942;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    /* Fun birthday background */
+    background:
+        radial-gradient(circle at 10% 20%, #ffd86f 0%, transparent 20%),
+        radial-gradient(circle at 90% 10%, #ff8fab 0%, transparent 25%),
+        radial-gradient(circle at 80% 90%, #8ec5fc 0%, transparent 25%),
+        linear-gradient(135deg, #fff1eb, #f9d8ff);
+
+    position: relative;
+}
+
+
+/* ================================
+   CARD
+================================ */
+
+.card {
+    position: relative;
+
+    width: min(100%, 680px);
+
+    padding: 50px 45px;
+
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.92);
+
+    border-radius: 32px;
+
+    border: 4px solid #fff;
+
+    box-shadow:
+        0 20px 0 rgba(111, 75, 255, 0.12),
+        0 30px 70px rgba(85, 50, 100, 0.25);
+
+    animation: cardAppear 1s ease;
+
+    z-index: 5;
+}
+
+@keyframes cardAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(40px) rotate(-1deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) rotate(0);
+    }
+}
+
+
+/* ================================
+   TOP BADGE
+================================ */
+
+.card::before {
+    content: "🎉 OFFICIAL BIRTHDAY EDITION 🎉";
+
+    display: inline-block;
+
+    padding: 8px 18px;
+
+    margin-bottom: 18px;
+
+    border-radius: 50px;
+
+    background: #fff0a8;
+
+    color: #765500;
+
+    font-size: 0.75rem;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    transform: rotate(-2deg);
+
+    box-shadow: 0 5px 0 #e8ce6b;
+}
+
+
+/* ================================
+   CAKE
+================================ */
+
+.cake {
+    font-size: 75px;
+
+    margin: 5px 0 12px;
+
+    filter: drop-shadow(0 8px 5px rgba(0, 0, 0, 0.12));
+
+    animation: cakeBounce 2s ease-in-out infinite;
+}
+
+@keyframes cakeBounce {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(-2deg);
+    }
+
+    50% {
+        transform: translateY(-12px) rotate(2deg);
+    }
+}
+
+
+/* ================================
+   TITLE
+================================ */
+
+h1 {
+    font-size: clamp(2.2rem, 7vw, 3.7rem);
+
+    font-weight: 900;
+
+    color: #6c4cff;
+
+    line-height: 1.1;
+
+    margin-bottom: 8px;
+
+    text-shadow:
+        3px 3px 0 #e8ddff;
+}
+
+
+/* ================================
+   MILLONARIA
+================================ */
+
+h2 {
+    display: inline-block;
+
+    padding: 10px 22px;
+
+    margin-bottom: 28px;
+
+    border-radius: 50px;
+
+    background: linear-gradient(
+        135deg,
+        #ffd700,
+        #ffb700
+    );
+
+    color: #6b4a00;
+
+    font-size: 1.5rem;
+
+    font-weight: 900;
+
+    box-shadow:
+        0 6px 0 #d99b00,
+        0 10px 20px rgba(218, 155, 0, 0.25);
+
+    transform: rotate(1deg);
+
+    animation: millionaire 3s ease-in-out infinite;
+}
+
+@keyframes millionaire {
+
+    0%,
+    100% {
+        transform: rotate(1deg) scale(1);
+    }
+
+    50% {
+        transform: rotate(-1deg) scale(1.04);
+    }
+}
+
+
+/* ================================
+   DIVIDER
+================================ */
+
+.line {
+    width: 120px;
+    height: 5px;
+
+    margin: 0 auto 32px;
+
+    border-radius: 20px;
+
+    background: linear-gradient(
+        90deg,
+        #ff7eb3,
+        #7b61ff,
+        #ffd43b
+    );
+}
+
+
+/* ================================
+   MESSAGE
+================================ */
+
+.message {
+    text-align: left;
+
+    font-size: 1.05rem;
+
+    line-height: 1.8;
+
+    color: #4e3d50;
+}
+
+.message p {
+    position: relative;
+
+    margin-bottom: 20px;
+
+    padding: 18px 20px;
+
+    background: #faf7ff;
+
+    border-left: 5px solid #8a70ff;
+
+    border-radius: 0 16px 16px 0;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.message p:hover {
+    transform: translateX(6px);
+
+    box-shadow:
+        0 8px 20px rgba(108, 76, 255, 0.12);
+}
+
+.message p:nth-child(2) {
+    border-left-color: #ffcc45;
+    background: #fffbed;
+}
+
+.message p:nth-child(3) {
+    border-left-color: #ff7eb3;
+    background: #fff5f9;
+}
+
+.message p:nth-child(4) {
+    border-left-color: #62c6ff;
+    background: #f2fbff;
+}
+
+.message p:nth-child(5) {
+    border-left-color: #9b7cff;
+    background: #f7f4ff;
+}
+
+.message p:nth-child(6) {
+    border-left-color: #ff9d5c;
+    background: #fff7f0;
+}
+
+.message p:nth-child(7) {
+    border-left-color: #ffd43b;
+    background: #fffdf0;
+}
+
+.message strong {
+    color: #e55b91;
+
+    font-weight: 800;
+}
+
+
+/* ================================
+   FOOTER
+================================ */
+
+.footer {
+    margin-top: 30px;
+
+    padding: 18px;
+
+    border-radius: 18px;
+
+    background: linear-gradient(
+        135deg,
+        #eee8ff,
+        #fff0f6
+    );
+
+    color: #6c4cff;
+
+    font-size: 1.1rem;
+
+    font-weight: 800;
+
+    box-shadow:
+        inset 0 0 0 2px rgba(108, 76, 255, 0.08);
+}
+
+
+/* ================================
+   SIGNATURE
+================================ */
+
+.signature {
+    margin-top: 15px;
+
+    color: #8b7a8e;
+
+    font-size: 0.9rem;
+
+    font-style: italic;
+}
+
+
+/* ================================
+   SPARKLES
+================================ */
+
+.sparkle {
+    position: absolute;
+
+    font-size: 25px;
+
+    pointer-events: none;
+
+    animation: sparkle 2s ease-in-out infinite;
+}
+
+.sparkle-1 {
+    top: 35px;
+    left: 30px;
+}
+
+.sparkle-2 {
+    top: 45px;
+    right: 30px;
+
+    animation-delay: 0.7s;
+}
+
+.sparkle-3 {
+    bottom: 30px;
+    left: 30px;
+
+    animation-delay: 1.2s;
+}
+
+@keyframes sparkle {
+
+    0%,
+    100% {
+        opacity: 0.25;
+        transform: scale(0.7) rotate(0deg);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.3) rotate(20deg);
+    }
+}
+
+
+/* ================================
+   FLOATING HEARTS
+================================ */
+
+.heart {
+    position: fixed;
+
+    bottom: -60px;
+
+    pointer-events: none;
+
+    z-index: 1;
+
+    animation:
+        floatHeart linear forwards;
+}
+
+@keyframes floatHeart {
+
+    0% {
+        transform:
+            translateY(0)
+            rotate(0deg)
+            scale(0.8);
+
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    100% {
+        transform:
+            translateY(-115vh)
+            rotate(360deg)
+            scale(1.2);
+
+        opacity: 0;
+    }
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 25px 12px;
+    }
+
+    .card {
+        padding: 35px 18px;
+
+        border-radius: 25px;
+    }
+
+    .card::before {
+        font-size: 0.62rem;
+
+        padding: 7px 12px;
+    }
+
+    .cake {
+        font-size: 58px;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+
+        padding: 9px 18px;
+    }
+
+    .message {
+        font-size: 0.97rem;
+
+        line-height: 1.7;
+    }
+
+    .message p {
+        padding: 15px 16px;
+
+        margin-bottom: 15px;
+    }
+
+    .footer {
+        font-size: 1rem;
+    }
+}

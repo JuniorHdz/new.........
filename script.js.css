@@ -1,0 +1,98 @@
+// ========================================
+// FLOATING BIRTHDAY EMOJIS
+// ========================================
+
+const heartsContainer = document.querySelector(".hearts");
+
+const birthdayEmojis = [
+    "❤️",
+    "💕",
+    "💗",
+    "💖",
+    "💞",
+    "💓",
+    "💰",
+    "👑",
+    "✨",
+    "🎉"
+];
+
+
+// ========================================
+// CREATE A FLOATING EMOJI
+// ========================================
+
+function createFloatingEmoji() {
+
+    const emoji = document.createElement("div");
+
+    emoji.classList.add("heart");
+
+    // Pick a random emoji
+    emoji.textContent =
+        birthdayEmojis[
+            Math.floor(
+                Math.random() * birthdayEmojis.length
+            )
+        ];
+
+
+    // Random horizontal position
+    emoji.style.left =
+        Math.random() * 100 + "vw";
+
+
+    // Random size
+    const size =
+        Math.random() * 20 + 15;
+
+    emoji.style.fontSize =
+        size + "px";
+
+
+    // Random animation speed
+    const duration =
+        Math.random() * 5 + 5;
+
+    emoji.style.animationDuration =
+        duration + "s";
+
+
+    // Slightly random starting position
+    emoji.style.bottom =
+        "-60px";
+
+
+    // Add it to the page
+    heartsContainer.appendChild(emoji);
+
+
+    // Remove it after animation
+    setTimeout(() => {
+
+        emoji.remove();
+
+    }, duration * 1000);
+}
+
+
+// ========================================
+// START FLOATING EMOJIS
+// ========================================
+
+setInterval(createFloatingEmoji, 500);
+
+
+// ========================================
+// CREATE SOME IMMEDIATELY
+// ========================================
+
+for (let i = 0; i < 10; i++) {
+
+    setTimeout(() => {
+
+        createFloatingEmoji();
+
+    }, i * 250);
+
+}
